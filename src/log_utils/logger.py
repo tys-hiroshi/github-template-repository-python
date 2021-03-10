@@ -4,8 +4,9 @@ import logging.config
 #     self.logging_config_file_path = os.path.join(base_path, config_file_name)
 
 class Logger():
-    def __init__(self, config_file_path: str):
-        logging.config.fileConfig(config_file_path)
+    def __init__(self, logging_config_file_path: str):
+        logging.config.fileConfig(logging_config_file_path)
+        logging.basicConfig(filename='logfile/logger.log', level=logging.DEBUG)
         self.logger = logging.getLogger()
 
     def info(self, message, console=False):
